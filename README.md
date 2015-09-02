@@ -1,6 +1,6 @@
 # Twemoji-Picker
 
-A simple jQuery plugin that add support for twemoji to textarea and input!
+A simple jQuery plugin that adds support for twemoji to textarea and input!
 
 Please feel free to report any issues or code improvements!
 
