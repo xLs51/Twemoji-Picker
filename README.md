@@ -2,9 +2,12 @@
 
 A simple jQuery plugin that add support for twemoji for textarea and input!
 
+Please feel free to report any issues or code improvements!
+
 ## Installation
 
 Add the following stylesheet and JavaScript links. Don't forget to include jQuery.
+
 ```
 <link rel="stylesheet" href="css/twemoji-picker.css">
 
@@ -51,6 +54,25 @@ $('#twemoji-picker').twemojiPicker({
   size: '20px'
 });
 ```
+
+## Database
+
+With Twemoji-Picker you can save your message to a database!
+
+The message : 'Twemoji-picker :smiley: :thumbsup:' is converted into `Twemoji-picker &#x1f600 &#x1f44d`so it can be saved to an utf8mb4 table.
+
+When retrieving the data, you will need the [twemoji.js](http://github.com/twitter/twemoji) to parse the Unicode.
+
+##### MySQL:
+
+Convert your table and column to utf8mb4.
+
+`ALTER TABLE mytable charset=utf8mb4, MODIFY COLUMN mycolumn CHARACTER SET utf8mb4;`
+
+And for each query use
+
+`SET NAMES utf8mb4`.
+
 ## TODO
 
 - Better design by default
@@ -59,7 +81,7 @@ $('#twemoji-picker').twemojiPicker({
 
 ## Credits
 
-Thanks to [Twitter Emoji](http://github.com/twitter/twemoji)
+Thanks to [Twitter Emoji](http://github.com/twitter/twemoji).
 
 ## MIT LICENSE
 
