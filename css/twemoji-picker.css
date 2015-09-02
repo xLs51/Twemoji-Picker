@@ -1,0 +1,9 @@
+.twemoji-wrap { position: relative; }
+.twemoji-wrap img { margin: 0 .05em 0 .1em; vertical-align: -0.1em; }
+.twemoji-textarea { overflow-y: scroll; height: 100%; border: 1px solid #ccc; padding: 6px 30px 6px 12px; }
+.twemoji-icon-picker img { position: absolute; top: 0; right: 15px; padding: 6px; }
+.twemoji-picker { position: absolute; right: 0; border: 1px solid #ccc; background-color: #fff; }
+.twemoji-icon-picker img, .twemoji-picker img {  -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; cursor: pointer; }
+.twemoji-picker-category { background-color: #ddd; }
+.twemoji-picker-category .close { float: right; margin-right: 2px; font-size: 21px; font-weight: 700; line-height: 1; opacity: .5; cursor: pointer; }
+.twemoji-list { overflow-y: scroll; }
