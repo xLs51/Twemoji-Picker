@@ -942,7 +942,7 @@
 
                 $.each(emoji, function(j, e) {
                     if(e.category == c)
-                        $('.' + c).append('<span><img class="emoji" draggable="false" src="' + e.base64 + '" alt="' + e.value + '"></span>');
+                        $('.twemoji-picker .' + c).append('<span><img class="emoji" draggable="false" src="' + e.base64 + '" alt="' + e.value + '"></span>');
                 });
             });
 
@@ -1020,8 +1020,8 @@
             this.$pickerCategory.find('span').removeClass('active');
             element.addClass('active');
 
-            this.$twemojiList.not('.' + category).hide();
-            $('.' + category).show();
+            this.$twemojiList.not('.twemoji-picker .' + category).hide();
+            $('.twemoji-picker .' + category).show();
         },
 
         copyTwemoji : function(twemoji) {
