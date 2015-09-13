@@ -30,28 +30,28 @@ Simply call `twemojiPicker();` on a textarea or input.
 ## Custom Options
 
 - `width` - `string` Set the width of the textarea or input. Default: `100%`
-- `height` - `string` Set the height of the textarea or input. Default: `null`
+- `height` - `string` Set the height of the textarea or input. Default: `100px`
 - `pickerWidth` - `string` Set the width of the picker. Default: `100%`
-- `pickerHeight` - `string` Set the width of the picker. Default: `100px`
+- `pickerHeight` - `string` Set the width of the picker. Default: `150px`
 - `icon` - `string` Set the twemoji icon. Default: `&#x1f600` :smiley:
-- `category` - `array` Set the the twemoji in the category picker. Default: `['&#x1f604', '&#x1f333', '&#x1f369', '&#x1f389', '&#x1f3ae', '&#x1f696', '&#x1f1ef;&#x1f1f5', '&#x1f523']` :smile: :deciduous_tree: :doughnut: :tada: :video_game: :oncoming_taxi: :jp: :symbols:
-- `iconSize` - `string` Set the size of the twemoji icon. Default: `20x`
+- `category` - `array` Set the the twemoji in the category picker. Default: `['&#x1f604', '&#x1f338', '&#x1f3ae', '&#x1f698', '&#x1f523']` :smile: :cherry_blossom: :video_game: :oncoming_automobile: :symbols:
+- `iconSize` - `string` Set the size of the twemoji icon. Default: `25px`
 - `categorySize` - `string` Set the size of the twemoji in the category picker. Default: `20px`
-- `size` - `string` Set the size of the twemoji in the picker and the textarea or input. Default: `20px`
+- `size` - `string` Set the size of the twemoji in the picker and the textarea or input. Default: `25px`
 
 ##### Javascript:
 
 ```
 $('#twemoji-picker').twemojiPicker({
-  width: '30%',
+  width: '100%',
   height: '100px',
   pickerWidth: '100%',
-  pickerHeight: '100px',
+  pickerHeight: '150px',
   icon: '&#x1f600',
-  category: ['&#x1f604', '&#x1f333', '&#x1f369', '&#x1f389', '&#x1f3ae', '&#x1f696', '&#x1f1ef;&#x1f1f5', '&#x1f523'],
-  iconSize: '20px',
+  category: ['&#x1f604', '&#x1f338', '&#x1f3ae', '&#x1f698', '&#x1f523'],
+  iconSize: '25px',
   categorySize: '20px,
-  size: '20px'
+  size: '25px'
 });
 ```
 
@@ -72,12 +72,6 @@ Convert your table and column to utf8mb4.
 And for each query use
 
 `SET NAMES utf8mb4`.
-
-## TODO
-
-- Better design by default
-- Set category + order
-- Add more options ?
 
 ## Credits
 
