@@ -33,8 +33,8 @@ Simply call `twemojiPicker();` on a textarea or input.
 - `height` - `string` Set the height of the textarea or input. Default: `100px`
 - `pickerWidth` - `string` Set the width of the picker. Default: `100%`
 - `pickerHeight` - `string` Set the width of the picker. Default: `150px`
-- `icon` - `string` Set the twemoji icon. Default: `&#x1f600` :smiley:
-- `category` - `array` Set the the twemoji in the category picker. Default: `['&#x1f604', '&#x1f338', '&#x1f3ae', '&#x1f698', '&#x1f523']` :smile: :cherry_blossom: :video_game: :oncoming_automobile: :symbols:
+- `icon` - `string` Set the twemoji icon. Default: `grinning` :grinning:
+- `category` - `array` Set the the twemoji in the category picker. Default: `['smile', 'cherry-blossom', 'video-game', 'oncoming-automobile', 'symbols']` :smile: :cherry_blossom: :video_game: :oncoming_automobile: :symbols:
 - `iconSize` - `string` Set the size of the twemoji icon. Default: `25px`
 - `categorySize` - `string` Set the size of the twemoji in the category picker. Default: `20px`
 - `size` - `string` Set the size of the twemoji in the picker and the textarea or input. Default: `25px`
@@ -47,8 +47,8 @@ $('#twemoji-picker').twemojiPicker({
   height: '100px',
   pickerWidth: '100%',
   pickerHeight: '150px',
-  icon: '&#x1f600',
-  category: ['&#x1f604', '&#x1f338', '&#x1f3ae', '&#x1f698', '&#x1f523'],
+  icon: 'grinning',
+  category: ['smile', 'cherry-blossom', 'video-game', 'oncoming-automobile', 'symbols'],
   iconSize: '25px',
   categorySize: '20px,
   size: '25px'
@@ -59,7 +59,7 @@ $('#twemoji-picker').twemojiPicker({
 
 With Twemoji-Picker you can save your message to a database!
 
-The message : 'Twemoji-picker :smiley: :thumbsup:' is converted into `Twemoji-picker &#x1f600 &#x1f44d`so it can be saved to an utf8mb4 table.
+The message : 'Twemoji-picker :grinning: :thumbsup:' is converted into `Twemoji-picker &#x1f600 &#x1f44d`so it can be saved to an utf8mb4 table.
 
 When retrieving the data, you will need the [twemoji.js](http://github.com/twitter/twemoji) to parse the Unicode.
 
