@@ -2,6 +2,8 @@
 
 A simple jQuery plugin that adds support for twemoji to textarea and input!
 
+![Example](twemoji.gif?raw=true)
+
 Please feel free to report any issues or code improvements!
 
 ## Installation
