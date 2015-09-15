@@ -976,6 +976,7 @@
             });
 
             this.$twemojiList.css({
+                width: this.options.pickerWidth ? this.options.pickerWidth : '100%',
                 height: this.options.pickerHeight
             });
         },
