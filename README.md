@@ -31,6 +31,7 @@ Simply call `twemojiPicker();` on a textarea or input.
 
 ## Custom Options
 
+- `init` - `string` Set the initial text of the textarea or input. Default: `null`
 - `width` - `string` Set the width of the textarea or input. Default: `100%`
 - `height` - `string` Set the height of the textarea or input. Default: `100px`
 - `pickerWidth` - `string` Set the width of the picker. Default: `100%`
@@ -45,6 +46,7 @@ Simply call `twemojiPicker();` on a textarea or input.
 
 ```
 $('#twemoji-picker').twemojiPicker({
+  init: ':thumbsup: Hello GitHub :hatching-chick: :heart:'
   width: '100%',
   height: '100px',
   pickerWidth: '100%',
