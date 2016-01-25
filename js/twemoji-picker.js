@@ -882,6 +882,7 @@
     };
 
     $.TwemojiPicker.defaults = {
+        init: null,
         width: null,
         height: 100,
         pickerWidth: null,
@@ -899,6 +900,7 @@
             this._initPicker();
             this._initCategory();
             this._initTwemoji();
+            this._initText();
             this._initStyle();
             this._initEvents();
         },
@@ -948,6 +950,19 @@
 
             this.$twemojiList = $('.twemoji-list');
             this.$twemojiList.not(':first').hide();
+        },
+
+        _initText : function() {
+            if(this.options.init) {
+                var text = this.options.init;
+                var regex = /:([\w]+):/g;
+                var items;
+
+                while (items = regex.exec(text)) text = text.replace(items[0], this.imageFromName(items[1], true));
+
+                this.$textarea.html(text);
+                this.copyTextArea(this.$textarea.html());
+            }
         },
 
         _initStyle : function() {
@@ -1042,8 +1057,9 @@
             this.$el.text(content);
         },
 
-        imageFromName : function(value) {
+        imageFromName : function(value, init) {
             var res = $.grep(emoji, function(e) { return e.name == value; });
+            if(init) return '<img class="emoji" src="' + res[0].base64 + '" alt="' + res[0].value + '" width="' + this.options.size + '" height="' + this.options.size + '">';
             return '<img class="emoji" draggable="false" src="' + res[0].base64 + '" alt="' + value + '">';
         },
 
