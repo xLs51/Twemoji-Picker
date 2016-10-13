@@ -913,10 +913,10 @@
             this.$wrapper.append('<div class="twemoji-picker"></div>');
 
             this.$el.hide();
-            this.$textarea = $('.twemoji-textarea');
-            this.$textareaDuplicate = $('.twemoji-textarea-duplicate').hide();
-            this.$iconPicker = $('.twemoji-icon-picker img');
-            this.$picker = $('.twemoji-picker').hide();
+            this.$textarea = this.$wrapper.find('.twemoji-textarea');
+            this.$textareaDuplicate = this.$wrapper.find('.twemoji-textarea-duplicate').hide();
+            this.$iconPicker = this.$wrapper.find('.twemoji-icon-picker img');
+            this.$picker = this.$wrapper.find('.twemoji-picker').hide();
         },
 
         _initCategory : function() {
@@ -926,7 +926,7 @@
             this.categoryName = ['people', 'nature', 'object', 'place', 'symbol'];
 
             this.$picker.append('<div class="twemoji-picker-category"></div>');
-            this.$pickerCategory = $('.twemoji-picker-category');
+            this.$pickerCategory = this.$picker.find('.twemoji-picker-category');
 
             $.each(this.categoryName, function(i, c) {
                 self.$pickerCategory.append('<span data-category="' + c + '">' + self.imageFromName(category[i]) + '</span>');
@@ -944,11 +944,11 @@
 
                 $.each(emoji, function(j, e) {
                     if(e.category == c)
-                        $('.twemoji-picker .' + c).append('<span><img class="emoji" draggable="false" src="' + e.base64 + '" alt="' + e.value + '"></span>');
+                        self.$wrapper.find('.twemoji-picker .' + c).append('<span><img class="emoji" draggable="false" src="' + e.base64 + '" alt="' + e.value + '"></span>');
                 });
             });
 
-            this.$twemojiList = $('.twemoji-list');
+            this.$twemojiList = self.$picker.find('.twemoji-list');
             this.$twemojiList.not(':first').hide();
         },
 
