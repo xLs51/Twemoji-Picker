@@ -1037,7 +1037,7 @@
             element.addClass('active');
 
             this.$twemojiList.not('.twemoji-picker .' + category).hide();
-            $('.twemoji-picker .' + category).show();
+            this.$twemojiList.filter('.twemoji-picker .' + category).show();
         },
 
         copyTwemoji : function(twemoji) {
