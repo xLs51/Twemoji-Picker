@@ -948,7 +948,7 @@
                 });
             });
 
-            this.$twemojiList = self.$picker.find('.twemoji-list');
+            this.$twemojiList = this.$picker.find('.twemoji-list');
             this.$twemojiList.not(':first').hide();
         },
 
