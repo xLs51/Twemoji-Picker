@@ -46,7 +46,7 @@ Simply call `twemojiPicker();` on a textarea or input.
 
 ```
 $('#twemoji-picker').twemojiPicker({
-  init: ':thumbsup: Hello GitHub :hatching-chick: :heart:'
+  init: ':thumbsup: Hello GitHub :hatching-chick: :heart:',
   width: '100%',
   height: '100px',
   pickerWidth: '100%',
@@ -54,7 +54,7 @@ $('#twemoji-picker').twemojiPicker({
   icon: 'grinning',
   category: ['smile', 'cherry-blossom', 'video-game', 'oncoming-automobile', 'symbols'],
   iconSize: '25px',
-  categorySize: '20px,
+  categorySize: '20px',
   size: '25px'
 });
 ```
