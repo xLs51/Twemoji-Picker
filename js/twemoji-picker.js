@@ -891,7 +891,7 @@
         category: ['smile', 'cherry-blossom', 'video-game', 'oncoming-automobile', 'symbols'],
         iconSize: 25,
         categorySize: 20,
-        size: 25
+        size: 25,
     };
 
     $.TwemojiPicker.prototype = {
@@ -913,16 +913,16 @@
             this.$wrapper.append('<div class="twemoji-picker"></div>');
 
             this.$el.hide();
-            this.$textarea = this.$wrapper.find('.twemoji-textarea');
+            this.$textarea          = this.$wrapper.find('.twemoji-textarea');
             this.$textareaDuplicate = this.$wrapper.find('.twemoji-textarea-duplicate').hide();
-            this.$iconPicker = this.$wrapper.find('.twemoji-icon-picker img');
-            this.$picker = this.$wrapper.find('.twemoji-picker').hide();
+            this.$iconPicker        = this.$wrapper.find('.twemoji-icon-picker img');
+            this.$picker            = this.$wrapper.find('.twemoji-picker').hide();
         },
 
         _initCategory : function() {
             var self = this;
 
-            var category = this.options.category;
+            var category      = this.options.category;
             this.categoryName = ['people', 'nature', 'object', 'place', 'symbol'];
 
             this.$picker.append('<div class="twemoji-picker-category"></div>');
@@ -940,11 +940,10 @@
             var self = this;
 
             $.each(this.categoryName, function(i, c) {
-                self.$picker.append('<div class="twemoji-list ' + c + '"></div>')
+                self.$picker.append('<div class="twemoji-list ' + c + '"></div>');
 
                 $.each(emoji, function(j, e) {
-                    if(e.category == c)
-                        self.$wrapper.find('.twemoji-picker .' + c).append('<span><img class="emoji" draggable="false" src="' + e.base64 + '" alt="' + e.value + '"></span>');
+                    if (e.category == c) self.$wrapper.find('.twemoji-picker .' + c).append('<span><img class="emoji" draggable="false" src="' + e.base64 + '" alt="' + e.value + '"></span>');
                 });
             });
 
@@ -954,11 +953,13 @@
 
         _initText : function() {
             if(this.options.init) {
-                var text = this.options.init;
-                var regex = /:([\w]+):/g;
+                var text  = this.options.init;
+                var regex = /:([\w-]+):/g;
                 var items;
 
-                while (items = regex.exec(text)) text = text.replace(items[0], this.imageFromName(items[1], true));
+                while (items = regex.exec(text)) {
+                    text = text.replace(items[0], this.imageFromName(items[1], true));
+                }
 
                 this.$textarea.html(text);
                 this.copyTextArea(this.$textarea.html());
@@ -967,18 +968,18 @@
 
         _initStyle : function() {
             this.$wrapper.css({
-                width: this.options.width ? this.options.width : '100%',
-                height: this.options.height ? this.options.height : ''
+                width:  this.options.width  ? this.options.width  : '100%',
+                height: this.options.height ? this.options.height : '',
             });
 
             this.$wrapper.find('img').css({
-                width: this.options.size,
-                height: this.options.size
+                width:  this.options.size,
+                height: this.options.size,
             });
 
             this.$iconPicker.css({
-                width: this.options.iconSize,
-                height: this.options.iconSize
+                width:  this.options.iconSize,
+                height: this.options.iconSize,
             });
 
             this.$picker.css({
@@ -986,13 +987,13 @@
             });
 
             this.$pickerCategory.find('img').css({
+                'width':  this.options.categorySize,
                 'height': this.options.categorySize,
-                'width': this.options.categorySize
             });
 
             this.$twemojiList.css({
-                width: this.options.pickerWidth ? this.options.pickerWidth : '100%',
-                height: this.options.pickerHeight
+                width:  this.options.pickerWidth ? this.options.pickerWidth : '100%',
+                height: this.options.pickerHeight,
             });
         },
 
@@ -1004,7 +1005,7 @@
             });
 
             this.$iconPicker.on('click', function() {
-                if(!self.openedPicker)  self.openPicker();
+                if (!self.openedPicker) self.openPicker();
                 else                    self.closePicker();
             });
 
@@ -1014,7 +1015,7 @@
             });
 
             this.$pickerCategory.find('.close').on('click', function() {
-                if(self.openedPicker) self.closePicker();
+                if (self.openedPicker) self.closePicker();
             });
 
             this.$twemojiList.find('img').on('click', function() {
@@ -1059,22 +1060,24 @@
 
         imageFromName : function(value, init) {
             var res = $.grep(emoji, function(e) { return e.name == value; });
-            if(init) return '<img class="emoji" src="' + res[0].base64 + '" alt="' + res[0].value + '" width="' + this.options.size + '" height="' + this.options.size + '">';
+
+            if (init) return '<img class="emoji" src="' + res[0].base64 + '" alt="' + res[0].value + '" width="' + this.options.size + '" height="' + this.options.size + '">';
             return '<img class="emoji" draggable="false" src="' + res[0].base64 + '" alt="' + value + '">';
         },
 
         pasteAtCursor : function(text) {
             var sel, range;
 
-            if(window.getSelection) {
+            if (window.getSelection) {
                 sel = window.getSelection();
 
-                if(sel.getRangeAt && sel.rangeCount) {
+                if (sel.getRangeAt && sel.rangeCount) {
                     range = sel.getRangeAt(0);
                     range.deleteContents();
 
-                    var el = document.createElement('div');
+                    var el       = document.createElement('div');
                     el.innerHTML = text;
+
                     var frag = document.createDocumentFragment(), node, lastNode;
 
                     while((node = el.firstChild)) {
@@ -1083,7 +1086,7 @@
 
                     range.insertNode(frag);
 
-                    if(lastNode) {
+                    if (lastNode) {
                         range = range.cloneRange();
                         range.setStartAfter(lastNode);
                         range.collapse(true);
@@ -1091,9 +1094,9 @@
                         sel.addRange(range);
                     }
                 }
-            }
-            else if(document.selection && document.selection.type != 'Control')
+            } else if (document.selection && document.selection.type != 'Control') {
                 document.selection.createRange().pasteHTML(text);
+            }
         }
     };
 
