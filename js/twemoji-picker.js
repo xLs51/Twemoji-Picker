@@ -883,15 +883,16 @@
 
     $.TwemojiPicker.defaults = {
         init: null,
-        width: null,
-        height: 100,
-        pickerWidth: null,
-        pickerHeight: 150,
-        icon: 'grinning',
-        category: ['smile', 'cherry-blossom', 'video-game', 'oncoming-automobile', 'symbols'],
-        iconSize: 25,
-        categorySize: 20,
         size: 25,
+        icon: 'grinning',
+        iconSize: 25,
+        height: 100,
+        width: null,
+        category: ['smile', 'cherry-blossom', 'video-game', 'oncoming-automobile', 'symbols'],
+        categorySize: 20,
+        pickerPosition: null,
+        pickerHeight: 150,
+        pickerWidth: null,
     };
 
     $.TwemojiPicker.prototype = {
@@ -943,7 +944,7 @@
                 self.$picker.append('<div class="twemoji-list ' + c + '"></div>');
 
                 $.each(emoji, function(j, e) {
-                    if (e.category == c) self.$wrapper.find('.twemoji-picker .' + c).append('<span><img class="emoji" draggable="false" src="' + e.base64 + '" alt="' + e.value + '"></span>');
+                    if (e.category === c) self.$wrapper.find('.twemoji-picker .' + c).append('<span><img class="emoji" draggable="false" src="' + e.base64 + '" alt="' + e.value + '"></span>');
                 });
             });
 
@@ -982,18 +983,19 @@
                 height: this.options.iconSize,
             });
 
-            this.$picker.css({
-                width: this.options.pickerWidth ? this.options.pickerWidth : '100%',
-            });
-
             this.$pickerCategory.find('img').css({
-                'width':  this.options.categorySize,
-                'height': this.options.categorySize,
+                width:  this.options.categorySize,
+                height: this.options.categorySize,
             });
 
             this.$twemojiList.css({
                 width:  this.options.pickerWidth ? this.options.pickerWidth : '100%',
                 height: this.options.pickerHeight,
+            });
+
+            this.$picker.css({
+                width: this.options.pickerWidth              ? this.options.pickerWidth                 : '100%',
+                top:   this.options.pickerPosition === 'top' ? '-' + this.$picker.outerHeight()  + 'px' : '',
             });
         },
 
