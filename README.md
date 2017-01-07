@@ -32,30 +32,32 @@ Simply call `twemojiPicker();` on a textarea or input.
 ## Custom Options
 
 - `init` - `string` Set the initial text of the textarea or input. Default: `null`
-- `width` - `string` Set the width of the textarea or input. Default: `100%`
-- `height` - `string` Set the height of the textarea or input. Default: `100px`
-- `pickerWidth` - `string` Set the width of the picker. Default: `100%`
-- `pickerHeight` - `string` Set the width of the picker. Default: `150px`
-- `icon` - `string` Set the twemoji icon. Default: `grinning` :grinning:
-- `category` - `array` Set the the twemoji in the category picker. Default: `['smile', 'cherry-blossom', 'video-game', 'oncoming-automobile', 'symbols']` :smile: :cherry_blossom: :video_game: :oncoming_automobile: :symbols:
-- `iconSize` - `string` Set the size of the twemoji icon. Default: `25px`
-- `categorySize` - `string` Set the size of the twemoji in the category picker. Default: `20px`
 - `size` - `string` Set the size of the twemoji in the picker and the textarea or input. Default: `25px`
+- `icon` - `string` Set the twemoji icon. Default: `grinning` :grinning:
+- `iconSize` - `string` Set the size of the twemoji icon. Default: `25px`
+- `height` - `string` Set the height of the textarea or input. Default: `100px`
+- `width` - `string` Set the width of the textarea or input. Default: `100%`
+- `category` - `array` Set the the twemoji in the category picker. Default: `['smile', 'cherry-blossom', 'video-game', 'oncoming-automobile', 'symbols']` :smile: :cherry_blossom: :video_game: :oncoming_automobile: :symbols:
+- `categorySize` - `string` Set the size of the twemoji in the category picker. Default: `20px`
+- `pickerPosition` - `string` Set the position of the picker. Default: `null`
+- `pickerHeight` - `string` Set the width of the picker. Default: `150px`
+- `pickerWidth` - `string` Set the width of the picker. Default: `100%`
 
 ##### Javascript:
 
 ```
 $('#twemoji-picker').twemojiPicker({
   init: ':thumbsup: Hello GitHub :hatching-chick: :heart:',
-  width: '100%',
-  height: '100px',
-  pickerWidth: '100%',
-  pickerHeight: '150px',
+  size: '25px',
   icon: 'grinning',
-  category: ['smile', 'cherry-blossom', 'video-game', 'oncoming-automobile', 'symbols'],
   iconSize: '25px',
+  height: '100px',
+  width: '100%',
+  category: ['smile', 'cherry-blossom', 'video-game', 'oncoming-automobile', 'symbols'],
   categorySize: '20px',
-  size: '25px'
+  pickerPosition: 'bottom',
+  pickerHeight: '150px',
+  pickerWidth: '100%'
 });
 ```
 
