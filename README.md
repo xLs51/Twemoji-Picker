@@ -32,6 +32,7 @@ Simply call `twemojiPicker();` on a textarea or input.
 ## Custom Options
 
 - `init` - `string` Set the initial text of the textarea or input. Default: `null`
+- `placeholder` - `string` Set the placeholder of the textarea or input. Default: `''`
 - `size` - `string` Set the size of the twemoji in the picker and the textarea or input. Default: `25px`
 - `icon` - `string` Set the twemoji icon. Default: `grinning` :grinning:
 - `iconSize` - `string` Set the size of the twemoji icon. Default: `25px`
@@ -48,6 +49,7 @@ Simply call `twemojiPicker();` on a textarea or input.
 ```
 $('#twemoji-picker').twemojiPicker({
   init: ':thumbsup: Hello GitHub :hatching-chick: :heart:',
+  placeholder: '',
   size: '25px',
   icon: 'grinning',
   iconSize: '25px',
