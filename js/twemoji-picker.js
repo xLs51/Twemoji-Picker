@@ -909,7 +909,7 @@
 
         _initPicker : function() {
             this.$wrapper = this.$el.wrap('<div class="twemoji-wrap"></div>').parent();
-            this.$wrapper.append('<div class="twemoji-textarea" contentEditable="true" placeholder="'+this.options.placeholder+'"></div>');
+            this.$wrapper.append('<div class="twemoji-textarea" contentEditable="true" placeholder="' + this.options.placeholder + '"></div>');
             this.$wrapper.append('<div class="twemoji-textarea-duplicate"></div>');
             this.$wrapper.append('<div class="twemoji-icon-picker">' + this.imageFromName(this.options.icon) + '</div>');
             this.$wrapper.append('<div class="twemoji-picker"></div>');
