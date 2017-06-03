@@ -81,6 +81,10 @@ And for each query use
 
 `SET NAMES utf8mb4`.
 
+## Todo
+
+- [ ] Add new emojis and release a version
+
 ## Credits
 
 Thanks to [Twitter Emoji](http://github.com/twitter/twemoji).
