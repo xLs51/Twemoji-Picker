@@ -894,6 +894,7 @@
         pickerHeight: 150,
         pickerWidth: null,
         placeholder: '',
+        closePickerAfterSelection: false,
     };
 
     $.TwemojiPicker.prototype = {
@@ -1099,6 +1100,10 @@
                 }
             } else if (document.selection && document.selection.type != 'Control') {
                 document.selection.createRange().pasteHTML(text);
+            }
+            
+            if(this.options.closePickerAfterSelection) {
+                this.closePicker();    
             }
         }
     };
