@@ -893,6 +893,7 @@
         pickerPosition: null,
         pickerHeight: 150,
         pickerWidth: null,
+        pickerSize: 25,
         placeholder: '',
     };
 
@@ -983,6 +984,11 @@
                 width:  this.options.iconSize,
                 height: this.options.iconSize,
             });
+            
+            this.$picker.find('img').css({
+                width: this.options.pickerSize,
+                height: this.options.pickerSize
+            });
 
             this.$pickerCategory.find('img').css({
                 width:  this.options.categorySize,
@@ -995,7 +1001,7 @@
             });
 
             this.$picker.css({
-                width: this.options.pickerWidth              ? this.options.pickerWidth                 : '100%',
+                width: this.options.pickerWidth ? this.options.pickerWidth : '100%',
                 top:   this.options.pickerPosition === 'top' ? '-' + this.$picker.outerHeight()  + 'px' : '',
             });
         },
@@ -1003,7 +1009,7 @@
         _initEvents : function() {
             var self = this;
 
-            this.$textarea.on('keyup', function() {
+            this.$textarea.on('keyup input', function() {
                 self.copyTextArea($(this).html());
             });
 
@@ -1056,9 +1062,16 @@
         copyTextArea : function(value) {
             var container = this.$textareaDuplicate.html(value);
             container.find('img').replaceWith(function() { return this.alt; })
+            
+            var content = '';
+            container.contents().each(function (i, node) {
+                content += node.nodeValue || '\n' +
+                    ((typeof node.textContent === 'string') ? node.textContent : node.innerHTML);
+            });
 
-            var content = container.html();
+//            var content = container.html();
             this.$el.text(content);
+            this.$el.trigger('input.tp', [this.$el.text()]);
         },
 
         imageFromName : function(value, init) {
