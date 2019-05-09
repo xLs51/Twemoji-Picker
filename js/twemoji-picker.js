@@ -1003,7 +1003,7 @@
         _initEvents : function() {
             var self = this;
 
-            this.$textarea.on('keyup', function() {
+            this.$textarea.on('input', function() {
                 self.copyTextArea($(this).html());
             });
 
